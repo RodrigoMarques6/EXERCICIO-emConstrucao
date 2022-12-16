@@ -10,33 +10,46 @@ const inputTelefone = document.getElementById('input-telefone')
 const inputSenha = document.getElementById('input-password')
 const inputConfirmeSenha = document.getElementById('input-confirme-password')
 const btnEnviar = document.querySelector('#btn-enviar')
+const div1TituloForm = document.getElementById('div1-titulo-form')
+const div2ConteudoForm = document.getElementById('div2-conteudo-form')
+const div3ResultadoForm = document.getElementById('div3-resultado-form')
+const h2TituloForm1 = document.getElementById('h2-titulo-form1')
+const h2TituloForm2 = document.getElementById('h2-titulo-form2')
 
 // -----------------------------------------------------------------
-// Caso quisesse transformar os dados dos inputs em array:
-// const dados = []
+// Transformar conteúdo dos inputs do form em array:
+const dados = []
 
-// btnEnviar.onclick = function (e) {
-//     dados.push(inputNome.value)
-//     dados.push(inputSobrenome.value)
-//     dados.push(inputEmail.value)
-//     dados.push(inputTelefone.value)
-//     dados.push(inputSenha.value)
-//     dados.push(inputConfirmeSenha.value)
-//     console.log(dados)
-//     e.preventDefault()
-// }
-
-// -----------------------------------------------------------------
-
-
-btnEnviar.onclick = function () {
-    function transformaEmObjeto(e) {
-        const dados = new Object()
-        dados.inputNome.value
-    }
-    transformaEmObjeto()
-    e.preventDefault()
+function resultadoFinal() {
+    enviarForm();
+    // mostrarParaUsuário()
 }
 
+function enviarForm() {
+    btnEnviar.onclick = function (e) {
+        e.preventDefault()
+        dados.push(inputNome.value)
+        dados.push(inputSobrenome.value)
+        dados.push(inputEmail.value)
+        dados.push(inputTelefone.value)
+        dados.push(inputSenha.value)
+        dados.push(inputConfirmeSenha.value)
+        console.log(dados)
+
+        h2TituloForm1.style.display = 'none'
+        h2TituloForm2.innerText = 'Confirmação dos dados:'
+        form.style.display = 'none'
+        div3ResultadoForm.innerHTML = `<ul>
+        <li>Seu nome completo: <b>${inputNome.value} ${inputSobrenome.value}</b></li>
+        <li>Seu e-mail: <b>${inputEmail.value}</b></li>
+        <li>Seu telefone: <b>${inputTelefone.value}<b></li>
+        </ul>`
+    }
+}
+
+resultadoFinal()
+
+// Transformar conteúdo dos inputs do form em objeto:
 
 
+// -----------------------------------------------------------------
