@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,45 +8,64 @@
     <title>Exercício JS</title>
     <link rel="stylesheet" href="./exercicio.css">
 </head>
+
 <body>
     <header>
-        <h1>Alguns exercícios para praticar HTML, CSS e JS</h1>
+        <h1>Alguns exercícios para praticar HTML, CSS e JS (em construção)</h1>
     </header>
     <main>
-        <h2>Formulário de cadastro</h2>
-        <form action="">
-            <fieldset>
-<legend>Seja bem-vindo!</legend>
-<div>
-    <label>Nome:</label>
-    <input type="text" title="Seu primeiro nome" placeholder="Digite seu primeiro nome" required>
-</div>
-<div>
-    <label>Sobrenome:</label>
-    <input type="text" title="Seu sobrenome" placeholder="Digite seu sobrenome" required>
-</div>
-<div>
-    <label>Seu melhor e-mail:</label>
-    <input type="email" title="Seu e-mail" placeholder="Digite seu e-mail" required>
-</div>
-<div>
-    <label>Telefone:</label>
-    <input type="text" title="Seu número de telefone" placeholder="Digite seu nº de telefone" required>
-</div>
-<div>
-    <label>Senha:</label>
-    <input type="password" title="Digite sua senha" placeholder="Digite sua senha com 6 dígitos" minlength="6" maxlength="6" required>
-</div>
-<div>
-    <label>Confirme sua senha:</label>
-    <input type="password" title="Confirme sua senha" placeholder="Confirme sua senha" minlength="6" maxlength="6" required>
-</div>
+        <section>
+            <div class="div1-titulo-form">
+                <h2>Formulário de cadastro</h2>
+            </div>
 
-            </fieldset>
-        </form>
+            <div class="div2-conteudo-form">
+                <form action="" id="form">
+                    <fieldset>
+                        <legend>Seja bem-vindo!</legend>
+                        <div>
+                            <label>Nome:</label>
+                            <input class="input-nome" id="input-nome" type="text" title="Seu primeiro nome" placeholder="Digite seu primeiro nome"
+                                required>
+                        </div>
+                        <div>
+                            <label>Sobrenome:</label>
+                            <input class="input-sobrenome" id="input-sobrenome" type="text" title="Seu sobrenome" placeholder="Digite seu sobrenome" required>
+                        </div>
+                        <div>
+                            <label>Seu melhor e-mail:</label>
+                            <input class="input-email" id="input-email" type="email" title="Seu e-mail" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <div>
+                            <label>Telefone:</label>
+                            <input class="input-telefone" id="input-telefone" type="text" title="Seu número de telefone" placeholder="Digite seu nº de telefone"
+                                required>
+                        </div>
+                        <div>
+                            <label>Senha:</label>
+                            <input class="input-password" id="input-password" type="password" title="Digite sua senha" placeholder="Digite sua senha com 6 dígitos"
+                                minlength="6" maxlength="6" required>
+                        </div>
+                        <div>
+                            <label>Confirme sua senha:</label>
+                            <input class="input-confirme-password" id="input-confirme-password" type="password" title="Confirme sua senha" placeholder="Confirme sua senha"
+                                minlength="6" maxlength="6" required>
+                        </div>
+
+                        <div>
+                            <button class="btn-enviar" id="btn-enviar">Enviar</button>
+                            <button class="btn-limpar" id="btn-limpar">Limpar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="div3-resultado-form"></div>
+
+        </section>
 
     </main>
     <footer></footer>
     <script src="./exercicio.js"></script>
 </body>
+
 </html>
