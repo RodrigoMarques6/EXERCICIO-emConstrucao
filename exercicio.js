@@ -15,6 +15,7 @@ const div2ConteudoForm = document.getElementById('div2-conteudo-form')
 const div3ResultadoForm = document.getElementById('div3-resultado-form')
 const h2TituloForm1 = document.getElementById('h2-titulo-form1')
 const h2TituloForm2 = document.getElementById('h2-titulo-form2')
+const div4EditarForm = document.getElementById('div4-editar-form')
 
 // -----------------------------------------------------------------
 // Transformar conteúdo dos inputs do form em array:
@@ -43,12 +44,16 @@ function enviarForm() {
         <li>Seu nome completo: <b>${inputNome.value} ${inputSobrenome.value}</b></li>
         <li>Seu e-mail: <b>${inputEmail.value}</b></li>
         <li>Seu telefone: <b>${inputTelefone.value}<b></li>
+        <li>Sua senha: <b>${inputSenha.value}<b></li>
+        <p>Seus dados estão corretos?</p>
         </ul>`
+        div4EditarForm.innerHTML = '<button>Continuar</button><span><button>Editar dados</button></span>'
     }
 }
 
 resultadoFinal()
 
+// Implementar um modal para aparecer na confirmação dos dados do usuário.
 // Transformar conteúdo dos inputs do form em objeto:
 
 
