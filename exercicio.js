@@ -62,5 +62,5 @@ resultadoFinal()
 // O ".map" permite que você retorne um array a partir de um array existente;
 //  Verificar no vídeo: https://www.youtube.com/watch?v=A8ATE1d_2xM
 
-// Estudamos os métodos map, pop, e push. O método map serve para percorrer o array e retornar um novo array por meio de uma função callback. O método pop serve para remover o último elemento do array. O método push serve para adicionar um elemento ao array. O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
+// Estudamos os métodos map, pop, push e filter. O método map serve para percorrer o array e retornar um novo array por meio de uma função callback. O método pop serve para remover o último elemento do array. O método push serve para adicionar um elemento ao array. O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
 // Obs.: A sintaxe do map e do filter são muito parecidas.
