@@ -26,30 +26,31 @@ function resultadoFinal() {
     // mostrarParaUsuário()
 }
 
-function enviarForm() {
-    btnEnviar.onclick = function (e) {
-        e.preventDefault()
-        dados.push(inputNome.value)
-        dados.push(inputSobrenome.value)
-        dados.push(inputEmail.value)
-        dados.push(inputTelefone.value)
-        dados.push(inputSenha.value)
-        dados.push(inputConfirmeSenha.value)
-        console.log(dados)
 
-        h2TituloForm1.style.display = 'none'
-        h2TituloForm2.innerText = 'Confirmação dos dados:'
-        form.style.display = 'none'
-        div3ResultadoForm.innerHTML = `<ul>
-        <li>Seu nome completo: <b>${inputNome.value} ${inputSobrenome.value}</b></li>
-        <li>Seu e-mail: <b>${inputEmail.value}</b></li>
-        <li>Seu telefone: <b>${inputTelefone.value}<b></li>
-        <li>Sua senha: <b>${inputSenha.value}<b></li>
-        <p>Seus dados estão corretos?</p>
-        </ul>`
-        div4EditarForm.innerHTML = '<button>Continuar</button><span><button>Editar dados</button></span>'
+function enviarForm() {
+        btnEnviar.onclick = function () {
+            // e.preventDefault()
+            dados.push(inputNome.value)
+            dados.push(inputSobrenome.value)
+            dados.push(inputEmail.value)
+            dados.push(inputTelefone.value)
+            dados.push(inputSenha.value)
+            dados.push(inputConfirmeSenha.value)
+            console.log(dados)
+    
+            h2TituloForm1.style.display = 'none'
+            h2TituloForm2.innerText = 'Confirmação dos dados:'
+            form.style.display = 'none'
+            div3ResultadoForm.innerHTML = `<ul>
+            <li>Seu nome completo: <b>${inputNome.value} ${inputSobrenome.value}</b></li>
+            <li>Seu e-mail: <b>${inputEmail.value}</b></li>
+            <li>Seu telefone: <b>${inputTelefone.value}<b></li>
+            <li>Sua senha: <b>${inputSenha.value}<b></li>
+            <p>Seus dados estão corretos?</p>
+            </ul>`
+            div4EditarForm.innerHTML = '<button>Continuar</button><span><button>Editar dados</button></span>'
     }
-}
+} 
 
 resultadoFinal()
 
