@@ -28,8 +28,9 @@ function resultadoFinal() {
 
 
 function enviarForm() {
-        btnEnviar.onclick = function () {
-            // e.preventDefault()
+
+        btnEnviar.onclick = function (e) {
+            e.preventDefault()
             dados.push(inputNome.value)
             dados.push(inputSobrenome.value)
             dados.push(inputEmail.value)
@@ -52,7 +53,21 @@ function enviarForm() {
     }
 } 
 
+
+
 resultadoFinal()
+
+// const btnModal1 = document.getElementById('btnModal1')
+// btnEnviar.onclick = function () {
+//     const modal = document.getElementById('dialog')
+//     modal.showModal()
+// }
+
+// btnModal1.onclick = function () {
+    
+//     btnModal1.close()
+// }
+
 
 // Implementar um modal para aparecer na confirmação dos dados do usuário.
 // Transformar conteúdo dos inputs do form em objeto:
