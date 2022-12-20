@@ -9,7 +9,7 @@ const inputEmail = document.getElementById('input-email')
 const inputTelefone = document.getElementById('input-telefone')
 const inputSenha = document.getElementById('input-password')
 const inputConfirmeSenha = document.getElementById('input-confirme-password')
-const btnEnviar = document.querySelector('#btn-enviar')
+const btnAvançar = document.querySelector('#btn-avançar')
 const div1TituloForm = document.getElementById('div1-titulo-form')
 const div2ConteudoForm = document.getElementById('div2-conteudo-form')
 const div3ResultadoForm = document.getElementById('div3-resultado-form')
@@ -18,59 +18,50 @@ const h2TituloForm2 = document.getElementById('h2-titulo-form2')
 const div4EditarForm = document.getElementById('div4-editar-form')
 
 // -----------------------------------------------------------------
-// Transformar conteúdo dos inputs do form em array:
+
 const dados = []
 
 function resultadoFinal() {
-    enviarForm();
-    // mostrarParaUsuário()
+    avançarForm();
 }
 
+function avançarForm() {
+    btnAvançar.onclick = function (e) {
+        e.preventDefault();
+        const openModal = document.getElementById('dialog');
+        openModal.showModal();
+        const liNome = document.getElementById('liNome');
+        liNome.innerText = `Nome completo: ${inputNome.value} ${inputSobrenome.value}`;
+        const liEmail = document.getElementById('liEmail');
+        liEmail.innerText = `E-mail: ${inputEmail.value}`;
+        const liTelefone = document.getElementById('liTelefone')
+        liTelefone.innerText = `Telefone: ${inputTelefone.value}`;
+        const liSenha = document.getElementById('liSenha');
+        liSenha.innerText = `Senha escolhida: ${inputSenha.value}`;
 
-function enviarForm() {
-
-        btnEnviar.onclick = function (e) {
-            e.preventDefault()
-            dados.push(inputNome.value)
-            dados.push(inputSobrenome.value)
-            dados.push(inputEmail.value)
-            dados.push(inputTelefone.value)
-            dados.push(inputSenha.value)
-            dados.push(inputConfirmeSenha.value)
-            console.log(dados)
-    
-            h2TituloForm1.style.display = 'none'
-            h2TituloForm2.innerText = 'Confirmação dos dados:'
-            form.style.display = 'none'
-            div3ResultadoForm.innerHTML = `<ul>
-            <li>Seu nome completo: <b>${inputNome.value} ${inputSobrenome.value}</b></li>
-            <li>Seu e-mail: <b>${inputEmail.value}</b></li>
-            <li>Seu telefone: <b>${inputTelefone.value}<b></li>
-            <li>Sua senha: <b>${inputSenha.value}<b></li>
-            <p>Seus dados estão corretos?</p>
-            </ul>`
-            div4EditarForm.innerHTML = '<button>Continuar</button><span><button>Editar dados</button></span>'
     }
-} 
-
-
+    const btnModal1 = document.getElementById('btnModal1')
+    btnModal1.onclick = function (e) {
+        e.preventDefault();
+        const closeModal = document.getElementById('dialog');
+        closeModal.close();
+        dados.push(inputNome.value);
+        dados.push(inputSobrenome.value);
+        dados.push(inputEmail.value);
+        dados.push(inputTelefone.value);
+        dados.push(inputSenha.value);
+        dados.push(inputConfirmeSenha.value);
+        console.log(dados);
+    }
+}
 
 resultadoFinal()
 
-// const btnModal1 = document.getElementById('btnModal1')
-// btnEnviar.onclick = function () {
-//     const modal = document.getElementById('dialog')
-//     modal.showModal()
-// }
-
-// btnModal1.onclick = function () {
-    
-//     btnModal1.close()
-// }
 
 
-// Implementar um modal para aparecer na confirmação dos dados do usuário.
-// Transformar conteúdo dos inputs do form em objeto:
+// Inserir um bloqueio para envio ao continuar o form antes do modal caso os campos estejam vazios
+// Verificar situação de: quando eu aperto em enviar form, ele não cria um novo array, mas adiciona no array anterior. Acho que pode ser resolveido quando eu criar um array de objetos.
+// Transformar conteúdo dos inputs do form em objeto
 
 
 // -----------------------------------------------------------------
