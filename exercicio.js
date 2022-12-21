@@ -16,17 +16,28 @@ const div3ResultadoForm = document.getElementById('div3-resultado-form')
 const h2TituloForm1 = document.getElementById('h2-titulo-form1')
 const h2TituloForm2 = document.getElementById('h2-titulo-form2')
 const div4EditarForm = document.getElementById('div4-editar-form')
+const btnModal1 = document.getElementById('btnModal1')
 
 // -----------------------------------------------------------------
 
 const dados = []
 
 function resultadoFinal() {
+    impedeEnvioEmCasosDeCampoVazio();
     avançarForm();
+    abrirModal();
+}
+
+function impedeEnvioEmCasosDeCampoVazio() {
+    btnAvançar.addEventListener('click', function () {
+        if (inputNome.value === '' || inputEmail.value === '' || ) {
+            // btnAvançar.style.backgroundColor = 'red'
+        }
+    })
 }
 
 function avançarForm() {
-    btnAvançar.onclick = function (e) {
+    btnAvançar.addEventListener('click', function (e) {
         e.preventDefault();
         const openModal = document.getElementById('dialog');
         openModal.showModal();
@@ -39,10 +50,11 @@ function avançarForm() {
         const liSenha = document.getElementById('liSenha');
         liSenha.innerText = `Senha escolhida: ${inputSenha.value}`;
 
-    }
-    const btnModal1 = document.getElementById('btnModal1')
+    })
+}
+
+function abrirModal () {
     btnModal1.onclick = function (e) {
-        e.preventDefault();
         const closeModal = document.getElementById('dialog');
         closeModal.close();
         dados.push(inputNome.value);
@@ -54,6 +66,10 @@ function avançarForm() {
         console.log(dados);
     }
 }
+
+
+    
+
 
 resultadoFinal()
 
