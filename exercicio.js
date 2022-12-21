@@ -9,7 +9,7 @@ const inputEmail = document.getElementById('input-email')
 const inputTelefone = document.getElementById('input-telefone')
 const inputSenha = document.getElementById('input-password')
 const inputConfirmeSenha = document.getElementById('input-confirme-password')
-const btnAvançar = document.querySelector('#btn-avançar')
+const btnAvançar = document.getElementById('btn-avançar').disabled = true
 const div1TituloForm = document.getElementById('div1-titulo-form')
 const div2ConteudoForm = document.getElementById('div2-conteudo-form')
 const div3ResultadoForm = document.getElementById('div3-resultado-form')
@@ -29,12 +29,22 @@ function resultadoFinal() {
 }
 
 function impedeEnvioEmCasosDeCampoVazio() {
-    btnAvançar.addEventListener('click', function () {
-        if (inputNome.value === '' || inputEmail.value === '' || ) {
-            // btnAvançar.style.backgroundColor = 'red'
+    form.addEventListener('input', function () {
+        if (inputNome.value === '' || inputSobrenome.value === '' || inputEmail.value === '' || inputTelefone.value === '' || inputSenha.value === '' || inputConfirmeSenha.value === '') {
+            document.getElementById('btn-avançar').disabled = true;
+        } else {
+            document.getElementById('btn-avançar').disabled = false;
         }
     })
 }
+
+// pintaCamposVazios()
+// // Ajustar lógica para os campos vazios
+
+
+// function pintaCamposVazios() {
+//     inputNome.style.border = '3px solid red'
+// }
 
 function avançarForm() {
     btnAvançar.addEventListener('click', function (e) {
@@ -53,8 +63,9 @@ function avançarForm() {
     })
 }
 
-function abrirModal () {
+function abrirModal() {
     btnModal1.onclick = function (e) {
+        e.preventDefault()
         const closeModal = document.getElementById('dialog');
         closeModal.close();
         dados.push(inputNome.value);
@@ -66,10 +77,6 @@ function abrirModal () {
         console.log(dados);
     }
 }
-
-
-    
-
 
 resultadoFinal()
 
