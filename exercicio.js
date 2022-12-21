@@ -47,7 +47,7 @@ function impedeEnvioEmCasosDeCampoVazio() {
 // }
 
 function avançarForm() {
-    btnAvançar.addEventListener('click', function (e) {
+    btnAvançar.onclick = function () {
         e.preventDefault();
         const openModal = document.getElementById('dialog');
         openModal.showModal();
@@ -59,9 +59,10 @@ function avançarForm() {
         liTelefone.innerText = `Telefone: ${inputTelefone.value}`;
         const liSenha = document.getElementById('liSenha');
         liSenha.innerText = `Senha escolhida: ${inputSenha.value}`;
-
-    })
+    }
 }
+
+
 
 function abrirModal() {
     btnModal1.onclick = function (e) {
