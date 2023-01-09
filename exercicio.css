@@ -1,12 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 form {
-    background-color: grey;
-    padding: 10px;
-    margin: 10px auto;
+    background-color: #242a4e;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+label {
+    padding: 0.5rem;
+    color: #e5c5ff;
+}
+
+input {
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+}
+
+input:focus {
+    background-color: #e5c5ff;
+}
+
+.btn-avançar, .btn-limpar {
+    background-color: #e5c5ff;
+    padding: 0.3rem;
+    margin-top: 0.2rem;
+    border-radius: 0.3rem;
+}
+
+.btn-avançar:hover, .btn-limpar:hover {
+    color: #e5c5ff;
+    background-color: #242a4e;
+    border: 2px solid #e5c5ff;
+    border-radius: 0.3rem;
+}
+
+fieldset {
+    border-radius: 10px;
+    border: 1px solid #e5c5ff;
+}
+
+#dialog {
+    background-color: #242a4e;
+    border-radius: 10px;
+    color: #e5c5ff;
+    border: 1px solid #e5c5ff;
+    margin: auto;
+    padding: 4rem;
+}
+
+.h1-dialog {
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+}
+
+#liNome, #liEmail, #liTelefone, #liSenha {
+    padding: 0.3rem;
+    list-style: none;
+    font-weight: bold;
+}
+
+.btnModal1, .btnModal2 {
+    background-color: #e5c5ff;
+    padding: 0.3rem;
+    margin-top: 0.2rem;
+    border-radius: 0.3rem;
+    margin-top: 1rem;
+}
+
+.btnModal1:hover, .btnModal2:hover {
+    color: #e5c5ff;
+    background-color: #242a4e;
+    border: 2px solid #e5c5ff;
+    border-radius: 0.3rem;
 }
 

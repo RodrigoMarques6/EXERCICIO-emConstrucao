@@ -120,6 +120,7 @@ resultadoFinal()
 
 // Verificar situação de: quando eu aperto em enviar form, ele não cria um novo array, mas adiciona no array anterior. Acho que pode ser resolveido quando eu criar um array de objetos.
 // Transformar conteúdo dos inputs do form em objeto
+// Problema encontrado: Ao enviar um form e quando limpa os campos de input, logo após o envio do form anterior, o botão de avançar permanece ativo, possibilitando um novo envio de form sendo que os campos estarão vazios.
 
 
 // -----------------------------------------------------------------

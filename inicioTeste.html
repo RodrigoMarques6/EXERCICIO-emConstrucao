@@ -22,7 +22,7 @@
             <div class="div2-conteudo-form" id="div2-conteudo-form"">
                 <form action="" id="form">
                     <fieldset>
-                        <legend>Alguma coisa aqui</legend>
+                        <!-- <legend>Alguma coisa aqui</legend> -->
                         <div>
                             <label>Nome:</label>
                             <input class="input-nome" id="input-nome" type="text" title="Seu primeiro nome" placeholder="Digite seu primeiro nome" required>
@@ -37,8 +37,8 @@
                         </div>
                         <div>
                             <label>Telefone:</label>
-                            <input class="input-telefone" id="input-telefone" type="text" title="Seu número de telefone" placeholder="Digite seu nº de telefone"
-                                required>
+                            <input class="input-telefone" id="input-telefone" type="tel" title="Seu número de telefone" placeholder="Digite seu nº de telefone"
+                             required>
                         </div>
                         <div>
                             <label>Senha:</label>
@@ -52,12 +52,13 @@
                         </div>
                     </fieldset>
                     <dialog id="dialog">
+                        <h1 class="h1-dialog">Confirme seus dados:</h1>
                         <li id="liNome"></li>
                         <li id="liEmail"></li>
                         <li id="liTelefone"></li>
                         <li id="liSenha"></li>
-                        <button id="btnModal1" type="submit">Confirmar envio</button>
-                        <button id="btnModal2">Quero editar meus dados</button>
+                        <button id="btnModal1" class="btnModal1" type="submit">Quero confirmar envio</button>
+                        <button id="btnModal2" class="btnModal2">Quero editar meus dados</button>
                     </dialog>
                     <div>
                         <button class="btn-avançar" id="btn-avançar">Avançar</button>
