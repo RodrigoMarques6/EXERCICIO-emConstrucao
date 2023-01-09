@@ -9,7 +9,7 @@ const inputEmail = document.getElementById('input-email')
 const inputTelefone = document.getElementById('input-telefone')
 const inputSenha = document.getElementById('input-password')
 const inputConfirmeSenha = document.getElementById('input-confirme-password')
-const btnAvançar = document.getElementById('btn-avançar').disabled = true
+const btnAvançar = document.getElementById('btn-avançar')
 const div1TituloForm = document.getElementById('div1-titulo-form')
 const div2ConteudoForm = document.getElementById('div2-conteudo-form')
 const div3ResultadoForm = document.getElementById('div3-resultado-form')
@@ -23,12 +23,14 @@ const btnModal1 = document.getElementById('btnModal1')
 const dados = []
 
 function resultadoFinal() {
-    impedeEnvioEmCasosDeCampoVazio();
+    btnAvançar.disabled = true
+    validacaoDeCamposVazios();
     avançarForm();
     abrirModal();
 }
 
-function impedeEnvioEmCasosDeCampoVazio() {
+function validacaoDeCamposVazios () {
+    
     form.addEventListener('input', function () {
         if (inputNome.value === '' || inputSobrenome.value === '' || inputEmail.value === '' || inputTelefone.value === '' || inputSenha.value === '' || inputConfirmeSenha.value === '') {
             document.getElementById('btn-avançar').disabled = true;
@@ -47,7 +49,8 @@ function impedeEnvioEmCasosDeCampoVazio() {
 // }
 
 function avançarForm() {
-    btnAvançar.onclick = function () {
+    
+    btnAvançar.onclick = function (e) {
         e.preventDefault();
         const openModal = document.getElementById('dialog');
         openModal.showModal();
@@ -58,15 +61,13 @@ function avançarForm() {
         const liTelefone = document.getElementById('liTelefone')
         liTelefone.innerText = `Telefone: ${inputTelefone.value}`;
         const liSenha = document.getElementById('liSenha');
-        liSenha.innerText = `Senha escolhida: ${inputSenha.value}`;
+        liSenha.innerText = `Senha escolhida: ${inputSenha.value}`;    
     }
 }
 
-
-
 function abrirModal() {
     btnModal1.onclick = function (e) {
-        e.preventDefault()
+        e.preventDefault();
         const closeModal = document.getElementById('dialog');
         closeModal.close();
         dados.push(inputNome.value);
@@ -75,7 +76,7 @@ function abrirModal() {
         dados.push(inputTelefone.value);
         dados.push(inputSenha.value);
         dados.push(inputConfirmeSenha.value);
-        console.log(dados);
+        console.log(dados);    
     }
 }
 
