@@ -27,6 +27,7 @@ function resultadoFinal() {
     btnAvançar.disabled = true
     validacaoDeCamposVazios();
     validacaoDeCaracteres();
+    validarIgualdadeDeSenhas();
     avançarForm();
     abrirModal();
     excluirDadosDoForm();
@@ -51,6 +52,14 @@ function validacaoDeCaracteres() {
         } else {
             document.getElementById('btn-avançar').disabled = false;
         }
+    })
+}
+
+function validarIgualdadeDeSenhas () {
+    form.addEventListener('input', function () {
+        if (inputSenha.value !== inputConfirmeSenha.value) {
+            document.getElementById('btn-avançar').disabled = true;
+        } 
     })
 }
 
