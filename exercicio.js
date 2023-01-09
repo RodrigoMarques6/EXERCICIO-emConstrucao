@@ -17,6 +17,7 @@ const h2TituloForm1 = document.getElementById('h2-titulo-form1')
 const h2TituloForm2 = document.getElementById('h2-titulo-form2')
 const div4EditarForm = document.getElementById('div4-editar-form')
 const btnModal1 = document.getElementById('btnModal1')
+const btnModal2 = document.getElementById('btnModal2')
 
 // -----------------------------------------------------------------
 
@@ -25,12 +26,15 @@ const dados = []
 function resultadoFinal() {
     btnAvançar.disabled = true
     validacaoDeCamposVazios();
+    validacaoDeCaracteres();
     avançarForm();
     abrirModal();
+    excluirDadosDoForm();
+    editarDados();
 }
 
-function validacaoDeCamposVazios () {
-    
+function validacaoDeCamposVazios() {
+
     form.addEventListener('input', function () {
         if (inputNome.value === '' || inputSobrenome.value === '' || inputEmail.value === '' || inputTelefone.value === '' || inputSenha.value === '' || inputConfirmeSenha.value === '') {
             document.getElementById('btn-avançar').disabled = true;
@@ -40,16 +44,18 @@ function validacaoDeCamposVazios () {
     })
 }
 
-// pintaCamposVazios()
-// // Ajustar lógica para os campos vazios
-
-
-// function pintaCamposVazios() {
-//     inputNome.style.border = '3px solid red'
-// }
+function validacaoDeCaracteres() {
+    form.addEventListener('input', function () {
+        if (inputSenha.value.length != 6 || inputConfirmeSenha.value.length != 6) {
+            document.getElementById('btn-avançar').disabled = true;
+        } else {
+            document.getElementById('btn-avançar').disabled = false;
+        }
+    })
+}
 
 function avançarForm() {
-    
+
     btnAvançar.onclick = function (e) {
         e.preventDefault();
         const openModal = document.getElementById('dialog');
@@ -61,12 +67,12 @@ function avançarForm() {
         const liTelefone = document.getElementById('liTelefone')
         liTelefone.innerText = `Telefone: ${inputTelefone.value}`;
         const liSenha = document.getElementById('liSenha');
-        liSenha.innerText = `Senha escolhida: ${inputSenha.value}`;    
+        liSenha.innerText = `Senha escolhida: ${inputSenha.value}`;
     }
 }
 
 function abrirModal() {
-    btnModal1.onclick = function (e) {
+    btnModal1.addEventListener('click', function (e) {
         e.preventDefault();
         const closeModal = document.getElementById('dialog');
         closeModal.close();
@@ -76,15 +82,33 @@ function abrirModal() {
         dados.push(inputTelefone.value);
         dados.push(inputSenha.value);
         dados.push(inputConfirmeSenha.value);
-        console.log(dados);    
+        console.log(dados);
+    })
+}
+
+
+function excluirDadosDoForm() {
+    btnModal1.addEventListener('click', function () {
+        inputNome.value = '';
+        inputSobrenome.value = '';
+        inputEmail.value = '';
+        inputTelefone.value = '';
+        inputSenha.value = '';
+        inputConfirmeSenha.value = '';
+    })
+}
+
+function editarDados() {
+    btnModal2.onclick = function (e) {
+        e.preventDefault()
+        const closeModal = document.getElementById('dialog');
+        closeModal.close();
     }
 }
 
 resultadoFinal()
 
 
-
-// Inserir um bloqueio para envio ao continuar o form antes do modal caso os campos estejam vazios
 // Verificar situação de: quando eu aperto em enviar form, ele não cria um novo array, mas adiciona no array anterior. Acho que pode ser resolveido quando eu criar um array de objetos.
 // Transformar conteúdo dos inputs do form em objeto
 
