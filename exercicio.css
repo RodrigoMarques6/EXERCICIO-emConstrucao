@@ -19,8 +19,10 @@ label {
 }
 
 input {
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     padding: 0.3rem;
+    min-width: 20vw;
+    margin-bottom: 1rem;
 }
 
 input:focus {
@@ -32,18 +34,36 @@ input:focus {
     padding: 0.3rem;
     margin-top: 0.2rem;
     border-radius: 0.3rem;
+    width: 15%;
+    margin-top: 1rem;
 }
 
-.btn-avançar:hover, .btn-limpar:hover {
+.btn-avançar:hover,
+.btn-limpar:hover { 
     color: #e5c5ff;
     background-color: #242a4e;
     border: 2px solid #e5c5ff;
     border-radius: 0.3rem;
 }
 
+.btn-avançar-disable:hover {
+    background-color: #e5c5ff;
+}
+
+
+.h2-titulo-form1 {
+    text-align: center;
+    color: #e5c5ff;
+    padding: 10px;
+}
+
 fieldset {
     border-radius: 10px;
     border: 1px solid #e5c5ff;
+    padding: 2rem;
+    /* text-align: center; */
+    width: 55%;
+    margin: auto;
 }
 
 #dialog {
@@ -81,4 +101,35 @@ fieldset {
     border: 2px solid #e5c5ff;
     border-radius: 0.3rem;
 }
+
+.section-form {
+    width: 100vw;
+    height: 80vh;
+    background-color: #242a4e;
+}
+
+.div-form {
+    display: flex;
+    justify-content: center;
+    /* width: 60%; */
+}
+
+.div1-form {
+    display: flex;
+    flex-direction: column;
+    /* width: 30%; */
+    margin: auto;
+}
+
+.div2-form {
+    display: flex;
+    flex-direction: column;
+    /* width: 30%; */
+    margin: auto;
+}
+
+.btn-form {
+    text-align: center;
+}
+
 

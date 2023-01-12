@@ -18,6 +18,7 @@ const h2TituloForm2 = document.getElementById('h2-titulo-form2')
 const div4EditarForm = document.getElementById('div4-editar-form')
 const btnModal1 = document.getElementById('btnModal1')
 const btnModal2 = document.getElementById('btnModal2')
+const btnLimpar = document.getElementById('btn-limpar')
 
 // -----------------------------------------------------------------
 
@@ -30,17 +31,23 @@ function resultadoFinal() {
     validarIgualdadeDeSenhas();
     avançarForm();
     abrirModal();
-    excluirDadosDoForm();
+    excluirDadosDoFormComBotãoLimpar();
+    excluirDadosDoFormApósEnvio();
     editarDados();
 }
 
 function validacaoDeCamposVazios() {
 
     form.addEventListener('input', function () {
+        const element = document.getElementById('btn-avançar')
+        
         if (inputNome.value === '' || inputSobrenome.value === '' || inputEmail.value === '' || inputTelefone.value === '' || inputSenha.value === '' || inputConfirmeSenha.value === '') {
             document.getElementById('btn-avançar').disabled = true;
+
+            // element.classList.add('btn-avançar-disable')
         } else {
-            document.getElementById('btn-avançar').disabled = false;
+            element.classList.remove('btn-avançar-disable')
+            // document.getElementById('btn-avançar').disabled = false;
         }
     })
 }
@@ -96,7 +103,18 @@ function abrirModal() {
 }
 
 
-function excluirDadosDoForm() {
+function excluirDadosDoFormComBotãoLimpar() {
+    btnLimpar.addEventListener('click', function () {
+        inputNome.value = '';
+        inputSobrenome.value = '';
+        inputEmail.value = '';
+        inputTelefone.value = '';
+        inputSenha.value = '';
+        inputConfirmeSenha.value = '';
+    })
+}
+
+function excluirDadosDoFormApósEnvio() {
     btnModal1.addEventListener('click', function () {
         inputNome.value = '';
         inputSobrenome.value = '';
@@ -121,7 +139,7 @@ resultadoFinal()
 // Verificar situação de: quando eu aperto em enviar form, ele não cria um novo array, mas adiciona no array anterior. Acho que pode ser resolveido quando eu criar um array de objetos.
 // Transformar conteúdo dos inputs do form em objeto
 // Problema encontrado: Ao enviar um form e quando limpa os campos de input, logo após o envio do form anterior, o botão de avançar permanece ativo, possibilitando um novo envio de form sendo que os campos estarão vazios.
-
+// Verificar o botão 'avançar', sobre o hover
 
 // -----------------------------------------------------------------
 // Algumas observações:

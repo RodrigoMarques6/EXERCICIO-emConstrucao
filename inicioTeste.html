@@ -14,41 +14,34 @@
         <h1>Alguns exercícios para praticar HTML, CSS e JS (em construção)</h1>
     </header>
     <main>
-        <section>
+        <section class="section-form">
             <div class="div1-titulo-form" id="div1-titulo-form"">
-                <h2 id="h2-titulo-form1">Formulário de cadastro</h2>
+                <h2 id="h2-titulo-form1" class="h2-titulo-form1">01. Formulário de cadastro</h2>
                 <h2 id="h2-titulo-form2"></h2>
             </div>
             <div class="div2-conteudo-form" id="div2-conteudo-form"">
                 <form action="" id="form">
                     <fieldset>
-                        <!-- <legend>Alguma coisa aqui</legend> -->
-                        <div>
+                        <div class="div-form">
+                        <div class="div1-form">
                             <label>Nome:</label>
                             <input class="input-nome" id="input-nome" type="text" title="Seu primeiro nome" placeholder="Digite seu primeiro nome" required>
-                        </div>
-                        <div>
-                            <label>Sobrenome:</label>
-                            <input class="input-sobrenome" id="input-sobrenome" type="text" title="Seu sobrenome" placeholder="Digite seu sobrenome" required>
-                        </div>
-                        <div>
-                            <label>Seu melhor e-mail:</label>
-                            <input class="input-email" id="input-email" type="email" title="Seu e-mail" placeholder="Digite seu e-mail" required>
-                        </div>
-                        <div>
                             <label>Telefone:</label>
                             <input class="input-telefone" id="input-telefone" type="tel" title="Seu número de telefone" placeholder="Digite seu nº de telefone"
                              required>
-                        </div>
-                        <div>
                             <label>Senha:</label>
                             <input class="input-password" id="input-password" type="password" title="Digite sua senha" placeholder="Digite sua senha com 6 dígitos"
                                 minlength="6" maxlength="6" required>
-                        </div>
-                        <div>
+                    </div>
+                    <div class="div2-form">
+                             <label>Sobrenome:</label>
+                            <input class="input-sobrenome" id="input-sobrenome" type="text" title="Seu sobrenome" placeholder="Digite seu sobrenome" required>
+                                <label>Seu melhor e-mail:</label>
+                            <input class="input-email" id="input-email" type="email" title="Seu e-mail" placeholder="Digite seu e-mail" required>
                             <label>Confirme sua senha:</label>
                             <input class="input-confirme-password" id="input-confirme-password" class="input" type="password" title="Confirme sua senha" placeholder="Confirme sua senha"
                                 minlength="6" maxlength="6" required>
+                        </div>
                         </div>
                     </fieldset>
                     <dialog id="dialog">
@@ -60,7 +53,7 @@
                         <button id="btnModal1" class="btnModal1" type="submit">Quero confirmar envio</button>
                         <button id="btnModal2" class="btnModal2">Quero editar meus dados</button>
                     </dialog>
-                    <div>
+                    <div class="btn-form">
                         <button class="btn-avançar" id="btn-avançar">Avançar</button>
                         <button class="btn-limpar" id="btn-limpar" type="reset">Limpar</button>
                     </div>
